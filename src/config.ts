@@ -469,79 +469,79 @@ export const config = {
         name: "USDC/CRV",
         token0: "USDC",
         token1: "CRV",
-        enabled: true, // ✅ $7.2M liquidity, $3.6M volume
+        enabled: false, // ✅ $7.2M liquidity, $3.6M volume
       },
       {
         name: "USDC/SUSHI",
         token0: "USDC",
         token1: "SUSHI",
-        enabled: true, // ✅ $469M liquidity, $234M volume
+        enabled: false, // ✅ $469M liquidity, $234M volume
       },
       {
         name: "USDT/WMATIC",
         token0: "USDT",
         token1: "WMATIC",
-        enabled: true, // ✅ $231M liquidity, $115M volume
+        enabled: false, // ✅ $231M liquidity, $115M volume
       },
       {
         name: "USDT/WETH",
         token0: "USDT",
         token1: "WETH",
-        enabled: true, // ✅ $21.4M liquidity, $10.7M volume
+        enabled: false, // ✅ $21.4M liquidity, $10.7M volume
       },
       {
         name: "USDT/LINK",
         token0: "USDT",
         token1: "LINK",
-        enabled: true, // ✅ $1.68B liquidity, $841M volume (MASSIVE!)
+        enabled: false, // ✅ $1.68B liquidity, $841M volume (MASSIVE!)
       },
       {
         name: "USDT/CRV",
         token0: "USDT",
         token1: "CRV",
-        enabled: true, // ✅ $75.8M liquidity, $37.9M volume
+        enabled: false, // ✅ $75.8M liquidity, $37.9M volume
       },
       {
         name: "USDT/SUSHI",
         token0: "USDT",
         token1: "SUSHI",
-        enabled: true, // ✅ $61.3M liquidity, $30.6M volume
+        enabled: false, // ✅ $61.3M liquidity, $30.6M volume
       },
       {
         name: "USDT/GHST",
         token0: "USDT",
         token1: "GHST",
-        enabled: true, // ✅ $160M liquidity, $80M volume
+        enabled: false, // ✅ $160M liquidity, $80M volume
       },
       {
         name: "WETH/LINK",
         token0: "WETH",
         token1: "LINK",
-        enabled: true, // ✅ $26.7M liquidity, $13.3M volume
+        enabled: false, // ✅ $26.7M liquidity, $13.3M volume
       },
       {
         name: "WETH/CRV",
         token0: "WETH",
         token1: "CRV",
-        enabled: true, // ✅ $140M liquidity, $70M volume
+        enabled: false, // ✅ $140M liquidity, $70M volume
       },
       {
         name: "DAI/WETH",
         token0: "DAI",
         token1: "WETH",
-        enabled: true, // ✅ $97k liquidity (existing pair, keep)
+        enabled: false, // ✅ $97k liquidity (existing pair, keep)
       },
       {
         name: "DAI/WBTC",
         token0: "DAI",
         token1: "WBTC",
-        enabled: true, // ✅ Large liquidity (existing pair, keep)
+        enabled: false, // ✅ Large liquidity (existing pair, keep)
       },
       {
         name: "WETH/WBTC",
         token0: "WETH",
         token1: "WBTC",
-        enabled: true, // ✅ Crypto majors (existing pair, keep)
+        enabled: false, // ✅ Crypto majors (existing pair, keep)
       },
       
       // === NEW V3 PAIRS (Discovered via V3 subgraph) ===
@@ -549,19 +549,19 @@ export const config = {
         name: "WETH/AAVE",
         token0: "WETH",
         token1: "AAVE",
-        enabled: true, // ✅ $2.1M liquidity, $43M volume (SushiSwap + Uniswap V3)
+        enabled: false, // ✅ $2.1M liquidity, $43M volume (SushiSwap + Uniswap V3)
       },
       {
         name: "WETH/SUSHI",
         token0: "WETH",
         token1: "SUSHI",
-        enabled: true, // ✅ $23.6M liquidity, $13.6M volume (SushiSwap + Uniswap V3)
+        enabled: false, // ✅ $23.6M liquidity, $13.6M volume (SushiSwap + Uniswap V3)
       },
       {
         name: "WETH/GHST",
         token0: "WETH",
         token1: "GHST",
-        enabled: true, // ✅ $175M liquidity, $87.8M volume (QuickSwap + Uniswap V3) - MASSIVE!
+        enabled: false, // ✅ $175M liquidity, $87.8M volume (QuickSwap + Uniswap V3) - MASSIVE!
       },
       
       // === DISABLED: GHST and other low-liquidity gaming/DeFi tokens ===
