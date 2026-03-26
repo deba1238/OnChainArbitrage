@@ -1,7 +1,6 @@
-name: Run Arbitrage Bot
+name: 🚀 Run Arbitrage Bot
 
 on:
-  push:
   workflow_dispatch:
     inputs:
       mode:
@@ -14,11 +13,32 @@ on:
           - real
 
 jobs:
-  run-bot:
+  run-arbitrage:
     runs-on: ubuntu-latest
     steps:
-      - name: Code Checkout
+      - name: 📂 Code Download
         uses: actions/checkout@v3
-        
-      - name: Run Test Command
-        run: echo "Bot setup is working perfectly!"
+
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: 📦 Install Packages
+        run: npm install
+
+      - name: 🟡 Test Mode (Dry Run)
+        if: ${{ github.event.inputs.mode == 'test' }}
+        env:
+          POLYGON_RPC_URL: ${{ secrets.POLYGON_RPC_URL }}
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          PROFIT_RECEIVER_ADDRESS: ${{ secrets.PROFIT_RECEIVER_ADDRESS }}
+        run: DRY_RUN=true npm run bot
+
+      - name: 🟢 Real Mode (Actual Trade)
+        if: ${{ github.event.inputs.mode == 'real' }}
+        env:
+          POLYGON_RPC_URL: ${{ secrets.POLYGON_RPC_URL }}
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          PROFIT_RECEIVER_ADDRESS: ${{ secrets.PROFIT_RECEIVER_ADDRESS }}
+        run: npm run bot
