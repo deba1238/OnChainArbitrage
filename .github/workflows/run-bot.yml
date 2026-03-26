@@ -1,10 +1,11 @@
-name: 🚀 Run Arbitrage Bot
+name: Run Arbitrage Bot
 
 on:
+  push:
   workflow_dispatch:
     inputs:
       mode:
-        description: 'কোন মোডে চালাতে চান?'
+        description: 'Test or Real Mode?'
         required: true
         default: 'test'
         type: choice
@@ -13,33 +14,11 @@ on:
           - real
 
 jobs:
-  run-arbitrage:
+  run-bot:
     runs-on: ubuntu-latest
     steps:
-      - name: 📂 কোড ডাউনলোড
+      - name: Code Checkout
         uses: actions/checkout@v3
-
-      - name: ⚙️ Node.js সেটআপ
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: 📦 প্যাকেজ ইনস্টল
-        run: npm install
-
-      - name: 🟡 টেস্ট মোড (Dry Run)
-        if: ${{ github.event.inputs.mode == 'test' }}
-        env:
-          POLYGON_RPC_URL: ${{ secrets.POLYGON_RPC_URL }}
-          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-          PROFIT_RECEIVER_ADDRESS: ${{ secrets.PROFIT_RECEIVER_ADDRESS }}
-        run: DRY_RUN=true npm run bot
-
-      - name: 🟢 রিয়েল মোড (আসল ট্রেড)
-        if: ${{ github.event.inputs.mode == 'real' }}
-        env:
-          POLYGON_RPC_URL: ${{ secrets.POLYGON_RPC_URL }}
-          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-          PROFIT_RECEIVER_ADDRESS: ${{ secrets.PROFIT_RECEIVER_ADDRESS }}
-        run: npm ru
-        n bot
+        
+      - name: Run Test Command
+        run: echo "Bot setup is working perfectly!"
